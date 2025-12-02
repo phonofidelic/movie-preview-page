@@ -14,3 +14,11 @@ Before completion, validate the markup with  [Markup Validation Service](https:
   * A list of important links.
 * **Page footer**:
     * A footer that includes information about the fictional movie company “FS” and the pages webmaster.
+
+## Running with vite dev server
+This project uses [Yarn and Vite](https://vite.dev/guide/#getting-started) for hot-reloading during development. 
+
+1. Install dependencies with `yarn`
+2. Run the dev server with `yarn dev`
+
+Alternatively, a VSCode extension such as [Live server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) can be used to watch `index.html` for changes.
