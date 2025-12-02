@@ -1,0 +1,16 @@
+# Movie Preview Page
+In this project, we build a simple HTML structure for a movie preview page. 
+No styling or dynamic content at this point, just well-structured semantic markup.
+Before completion, validate the markup with  [Markup Validation Service](https://validator.w3.org/).
+
+## Requirements
+* **Page header**: 
+  * The page header should include a logo other visualization of the film’s title.
+* **Information section**: 
+  * An introduction of the film including premier date, director,  actors and a short plot description.
+* **Video section**:
+  * A video element that shows the movie trailer. Use a YouTube embed.
+* **Links list**:
+  * A list of important links.
+* **Page footer**:
+    * A footer that includes information about the fictional movie company “FS” and the pages webmaster.
