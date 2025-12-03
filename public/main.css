@@ -19,7 +19,11 @@ dl {
 }
 
 dl > div {
-  padding: 4px;
+  padding: 0.5rem;
+}
+
+dl > div > * {
+  padding: 0.25rem;
 }
 
 dt {
@@ -28,6 +32,7 @@ dt {
 
 dd {
   margin-inline-start: 0;
+  font-size: smaller;
 }
 
 cite {
@@ -38,6 +43,7 @@ cite {
 
 h1 {
   font-size: 3em;
+  font-weight: bold;
 }
 
 header {
@@ -46,6 +52,11 @@ header {
   height: 100vh;
   background-color: #020202;
   z-index: 1000;
+  margin-bottom: 12rem;
+}
+
+main {
+  margin-bottom: 12rem;
 }
 
 #header-video {
@@ -93,13 +104,17 @@ header {
   padding: 16px;
 }
 
-section {
+.section-layout {
   max-width: 600px;
   margin: auto;
-  padding: 32px;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding: 4rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   z-index: 10;
+}
+
+section > p {
+  text-align: left;
 }
 
 iframe {
