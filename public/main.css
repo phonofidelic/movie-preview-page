@@ -10,6 +10,10 @@ body {
   margin: auto;
 }
 
+a {
+  color: #363436;
+}
+
 dl {
   text-align: left;
   max-width: max-content;
@@ -23,6 +27,7 @@ dt {
 cite {
   text-align: right;
   display: block;
+  font-size: smaller;
 }
 
 header {
@@ -43,6 +48,7 @@ iframe {
   list-style: none;
   display: flex;
   justify-content: space-around;
+  padding-inline-start: 0;
 }
 
 footer {
@@ -53,5 +59,16 @@ footer {
 @media (max-width: 600px) {
   iframe {
     max-width: 100%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: whitesmoke;
+    background-color: black;
+  }
+
+  a {
+    color: whitesmoke;
   }
 }
