@@ -8,39 +8,26 @@
   </head>
   <body>
     <header>
-      <hgroup>
-        <h1 class="title">2001: A Space Odyssey</h1>
-        <p>
-          <q
-            cite="https://www.imdb.com/title/tt0062622/characters/nm0706937/?item=qt7110171&ref_=ext_shr_lnk"
-          >
-            I'm sorry, Dave. I'm afraid I can't do that.
-          </q>
-        </p>
-        <cite>— Douglas Rain as HAL 9000</cite>
-      </hgroup>
+      <div id="header-video"></div>
+      <div class="header-content-container">
+        <div class="header-block"></div>
+        <hgroup class="header-content">
+          <h1 class="heater-title">2001: A Space Odyssey</h1>
+          <div class="header-caption">
+            <p>
+              <q
+                cite="https://www.imdb.com/title/tt0062622/characters/nm0706937/?item=qt7110171&ref_=ext_shr_lnk"
+              >
+                I'm sorry, Dave. I'm afraid I can't do that.
+              </q>
+            </p>
+            <cite>— Douglas Rain as HAL 9000</cite>
+          </div>
+        </hgroup>
+        <div class="header-block"></div>
+      </div>
     </header>
     <main>
-      <section>
-        <h2>Trailer</h2>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube-nocookie.com/embed/oR_e9y-bka0?si=eEhe0zwWuMoKb_Fv"
-          title="YouTube video player"
-          allow="
-            accelerometer;
-            autoplay;
-            clipboard-write;
-            encrypted-media;
-            gyroscope;
-            picture-in-picture;
-            web-share;
-          "
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </section>
       <section>
         <h2>Information</h2>
         <p>
@@ -86,6 +73,26 @@
           </dl>
         </section>
       </section>
+      <section>
+        <h2>Trailer</h2>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube-nocookie.com/embed/oR_e9y-bka0?si=eEhe0zwWuMoKb_Fv"
+          title="YouTube video player"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+            web-share;
+          "
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </section>
       <section class="section-links">
         <h2>Links</h2>
         <ul>
@@ -122,10 +129,11 @@
         on behalf of "FS Films".
       </address>
     </footer>
-    <div style="position: fixed; bottom: 32px; right: 32px">
+    <div style="position: fixed; bottom: 32px; right: 32px; z-index: 1001">
       <button id="toggle-css-button">Toggle CSS</button>
     </div>
     <script>
+      // CSS toggle button
       let showCss = true;
       const cssLink = document.getElementById("main-css-link");
       const toggleButton = document.getElementById("toggle-css-button");
@@ -144,6 +152,44 @@
           document.head.appendChild(cssLink);
         }
       };
+    </script>
+    <script>
+      /* YouTube IFrame Player API:
+       * https://developers.google.com/youtube/player_parameters#IFrame_Player_API
+       */
+      const VIDEO_ID = "oR_e9y-bka0";
+      // Load the IFrame Player API code asynchronously.
+      var tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/player_api";
+      var firstScriptTag = document.getElementsByTagName("script")[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // Replace the 'header-video' element with an <iframe> and
+      // YouTube player after the API code downloads.
+      var player;
+
+      const playerContainer = document.getElementById("header-video");
+      playerContainer.addEventListener("hover", () => console.log("hover"));
+
+      function onYouTubePlayerAPIReady() {
+        player = new YT.Player("header-video", {
+          height: "360",
+          width: "640",
+          videoId: VIDEO_ID,
+          autoplay: "1",
+          // Supported parameters: https://developers.google.com/youtube/player_parameters#Parameters
+          playerVars: {
+            autoplay: 1,
+            controls: 0,
+            autohide: 1,
+            wmode: "opaque",
+            showinfo: 0,
+            loop: 1,
+            mute: 1,
+            playlist: VIDEO_ID,
+          },
+        });
+      }
     </script>
   </body>
 </html>

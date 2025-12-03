@@ -36,21 +36,71 @@ cite {
   font-size: smaller;
 }
 
-header {
-  padding: 32px;
+h1 {
+  font-size: 3em;
 }
 
-section,
-hgroup {
+header {
+  background: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: #020202;
+  z-index: 1000;
+}
+
+#header-video {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  max-width: 100vw;
+}
+
+.header-content-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(2, 2, 2, 0.5);
+}
+
+.header-block {
+  width: 100%;
+  height: 64px;
+  background-color: #020202;
+}
+
+.header-content {
+  flex: 1;
+  position: relative;
+  color: whitesmoke;
+
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header-caption {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section {
   max-width: 600px;
   margin: auto;
-  padding: 16px;
+  padding: 32px;
   padding-left: 32px;
   padding-right: 32px;
+  z-index: 10;
 }
 
 iframe {
   border: none;
+  max-width: 100%;
 }
 
 .section-links ul {
@@ -69,7 +119,7 @@ iframe {
 footer {
   color: whitesmoke;
   background-color: #1e1e1e;
-  padding: 32px;
+  padding: 16px;
   margin-top: 64px;
   font-size: smaller;
 }
@@ -78,9 +128,26 @@ footer a {
   color: whitesmoke;
 }
 
+#toggle-css-button {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+@media (max-width: 670px) {
+  h1 {
+    font-size: 2em;
+  }
+}
+
 @media (max-width: 600px) {
   iframe {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 468px) {
+  h1 {
+    font-size: 1.5em;
   }
 }
 
