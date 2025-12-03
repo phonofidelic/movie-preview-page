@@ -1,0 +1,57 @@
+body {
+  font-family:
+    Futura,
+    Trebuchet MS,
+    Arial,
+    sans-serif;
+  color: #363436;
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+}
+
+dl {
+  text-align: left;
+  max-width: max-content;
+  margin: auto;
+}
+
+dt {
+  font-weight: bold;
+}
+
+cite {
+  text-align: right;
+  display: block;
+}
+
+header {
+  padding: 32px;
+}
+
+section {
+  padding: 16px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+iframe {
+  border: none;
+}
+
+.section-links > ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer {
+  padding: 32px;
+  font-size: smaller;
+}
+
+@media (max-width: 600px) {
+  iframe {
+    max-width: 100%;
+  }
+}
