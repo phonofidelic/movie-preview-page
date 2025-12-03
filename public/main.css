@@ -15,13 +15,20 @@ a {
 }
 
 dl {
-  text-align: left;
   max-width: max-content;
   margin: auto;
 }
 
+dl > div {
+  padding: 4px;
+}
+
 dt {
   font-weight: bold;
+}
+
+dd {
+  margin-inline-start: 0;
 }
 
 cite {
