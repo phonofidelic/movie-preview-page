@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2001: A Space Odyssey</title>
-    <link rel="stylesheet" href="main.css" />
+    <link id="main-css-link" rel="stylesheet" href="main.css" />
   </head>
   <body>
     <header>
@@ -122,5 +122,28 @@
         on behalf of "FS Films".
       </address>
     </footer>
+    <div style="position: fixed; bottom: 32px; right: 32px">
+      <button id="toggle-css-button">Toggle CSS</button>
+    </div>
+    <script>
+      let showCss = true;
+      const cssLink = document.getElementById("main-css-link");
+      const toggleButton = document.getElementById("toggle-css-button");
+      const checkBox = document.createElement("input");
+      checkBox.type = "checkbox";
+      checkBox.setAttribute("checked", true);
+      toggleButton.appendChild(checkBox);
+
+      toggleButton.onclick = () => {
+        showCss = !showCss;
+        if (showCss == false) {
+          document.head.removeChild(cssLink);
+          checkBox.removeAttribute("checked");
+        } else {
+          checkBox.setAttribute("checked", true);
+          document.head.appendChild(cssLink);
+        }
+      };
+    </script>
   </body>
 </html>
