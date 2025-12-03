@@ -84,9 +84,13 @@ header {
 }
 
 .header-caption {
+  display: block;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+}
+.header-caption > * {
+  padding: 16px;
 }
 
 section {
@@ -137,11 +141,9 @@ footer a {
   h1 {
     font-size: 2em;
   }
-}
 
-@media (max-width: 600px) {
-  iframe {
-    max-width: 100%;
+  .header-caption {
+    font-size: 0.75rem;
   }
 }
 
